@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PropsWithChildren} from "react";
-import './global.css';
+import "./globals.css";
+import NavigationBar from "./components/navigation-bar/NavigationBar";
 
 export const metadata: Metadata = {
   title: "Cobalt — Everything About The Essential Metal",
@@ -19,14 +20,16 @@ export const metadata: Metadata = {
 };
 
 
-const RootLayout =  (props: PropsWithChildren) => {
+const RootLayout = (props: PropsWithChildren) => {
   return (
     <html>
       <body>
         <div className="flex flex-col items-stretch">
+          <NavigationBar />
           {props.children}
         </div>
       </body>
     </html>
   );
 };
+export default RootLayout;// Add this line to export RootLayout as the default export
